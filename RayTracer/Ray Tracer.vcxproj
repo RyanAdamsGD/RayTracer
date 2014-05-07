@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B3D01D2F-248D-4E85-97AC-B4019AAB7DFA}</ProjectGuid>
+    <RootNamespace>RayTracer</RootNamespace>
+    <ProjectName>Ray Tracer</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\External Dependencies\boost_1_51_0;$(SolutionDir)..\..\External Dependencies\glm;$(SolutionDir)..\..\External Dependencies\Qt\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\External Dependencies\boost_1_51_0\stage\lib;$(SolutionDir)..\..\External Dependencies\glew\lib;$(SolutionDir)..\..\External Dependencies\NeumontTools\lib;$(SolutionDir)..\..\External Dependencies\Qt\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>QtCored4.lib;QtGuid4.lib;libboost_thread-vc100-mt-gd-1_51.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\External Dependencies\Qt\include;$(SolutionDir)..\..\External Dependencies\glm;$(SolutionDir)..\..\External Dependencies\boost_1_51_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\External Dependencies\Qt\lib;$(SolutionDir)..\..\External Dependencies\NeumontTools\lib;$(SolutionDir)..\..\External Dependencies\glew\lib;$(SolutionDir)..\..\External Dependencies\boost_1_51_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>QtGuid4.lib;QtCored4.lib;libboost_thread-vc100-mt-gd-1_51.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AmbientLight.cpp" />
+    <ClCompile Include="AmbientOccluder.cpp" />
+    <ClCompile Include="Annulus.cpp" />
+    <ClCompile Include="AreaLight.cpp" />
+    <ClCompile Include="AreaLighting.cpp" />
+    <ClCompile Include="BoundingBox.cpp" />
+    <ClCompile Include="Box.cpp" />
+    <ClCompile Include="BRDF.cpp" />
+    <ClCompile Include="BTDF.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Checker3D.cpp" />
+    <ClCompile Include="Compound.cpp" />
+    <ClCompile Include="ConcavePartCylinder.cpp" />
+    <ClCompile Include="ConcavePartTorus.cpp" />
+    <ClCompile Include="ConstantColor.cpp" />
+    <ClCompile Include="ConvexPartCylinder.cpp" />
+    <ClCompile Include="CubicNoise.cpp" />
+    <ClCompile Include="Cylinder.cpp" />
+    <ClCompile Include="CylindricalMapping.cpp" />
+    <ClCompile Include="Dielectric.cpp" />
+    <ClCompile Include="DirectionalLight.cpp" />
+    <ClCompile Include="Disk.cpp" />
+    <ClCompile Include="Emissive.cpp" />
+    <ClCompile Include="FbmTexture.cpp" />
+    <ClCompile Include="FileLoader.cpp" />
+    <ClCompile Include="FishEyeCamera.cpp" />
+    <ClCompile Include="FlatMeshTriangle.cpp" />
+    <ClCompile Include="FlatUVMeshTriangle.cpp" />
+    <ClCompile Include="FresnelReflector.cpp" />
+    <ClCompile Include="FresnelTransmitter.cpp" />
+    <ClCompile Include="GeometricObject.cpp" />
+    <ClCompile Include="GlassOfWater.cpp" />
+    <ClCompile Include="GlossyReflector.cpp" />
+    <ClCompile Include="GlossySpecular.cpp" />
+    <ClCompile Include="Grid.cpp" />
+    <ClCompile Include="Hammersley.cpp" />
+    <ClCompile Include="HelperFunctions.cpp" />
+    <ClCompile Include="ImageTexture.cpp" />
+    <ClCompile Include="Instance.cpp" />
+    <ClCompile Include="IParticleDrawer.cpp" />
+    <ClCompile Include="Jittered.cpp" />
+    <ClCompile Include="Lambert.cpp" />
+    <ClCompile Include="LatticeNoise.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="LightProbeMapping.cpp" />
+    <ClCompile Include="LinearNoise.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="MainWindow_moc.cpp" />
+    <ClCompile Include="Mapping.cpp" />
+    <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Matte.cpp" />
+    <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="MeshTriangle.cpp" />
+    <ClCompile Include="MultiJittered.cpp" />
+    <ClCompile Include="MultipleObjects.cpp" />
+    <ClCompile Include="NRooks.cpp" />
+    <ClCompile Include="PathTrace.cpp" />
+    <ClCompile Include="PerfectSpecular.cpp" />
+    <ClCompile Include="PerfectTransmitter.cpp" />
+    <ClCompile Include="Phong.cpp" />
+    <ClCompile Include="PinHoleCamera.cpp" />
+    <ClCompile Include="Plane.cpp" />
+    <ClCompile Include="PlaneChecker.cpp" />
+    <ClCompile Include="PointLight.cpp" />
+    <ClCompile Include="PureRandom.cpp" />
+    <ClCompile Include="QTDebugMenu.cpp" />
+    <ClCompile Include="QtPaintWindow.cpp" />
+    <ClCompile Include="Ray.cpp" />
+    <ClCompile Include="RayCast.cpp" />
+    <ClCompile Include="Rect.cpp" />
+    <ClCompile Include="RectangleObject.cpp" />
+    <ClCompile Include="RectangularMapping.cpp" />
+    <ClCompile Include="Reflective.cpp" />
+    <ClCompile Include="Regular.cpp" />
+    <ClCompile Include="Sampler.cpp" />
+    <ClCompile Include="ShadeRec.cpp" />
+    <ClCompile Include="SingleSphere.cpp" />
+    <ClCompile Include="SmoothMeshTriangle.cpp" />
+    <ClCompile Include="SmoothUVMeshTriangle.cpp" />
+    <ClCompile Include="Sphere.cpp" />
+    <ClCompile Include="SphereicalPanoramicCamera.cpp" />
+    <ClCompile Include="SphericalMapping.cpp" />
+    <ClCompile Include="SVLambertian.cpp" />
+    <ClCompile Include="SVMatte.cpp" />
+    <ClCompile Include="TexImage.cpp" />
+    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="ThinLensCamera.cpp" />
+    <ClCompile Include="Torus.cpp" />
+    <ClCompile Include="Tracer.cpp" />
+    <ClCompile Include="Transparent.cpp" />
+    <ClCompile Include="Triangle.cpp" />
+    <ClCompile Include="Vertex.cpp" />
+    <ClCompile Include="ViewPlane.cpp" />
+    <ClCompile Include="Whitted.cpp" />
+    <ClCompile Include="WoodTexture.cpp" />
+    <ClCompile Include="World.cpp" />
+    <ClCompile Include="WorldBuildFunctions.cpp" />
+    <ClCompile Include="WrappedFbmTexture.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AmbientLight.h" />
+    <ClInclude Include="AmbientOccluder.h" />
+    <ClInclude Include="Annulus.h" />
+    <ClInclude Include="AreaLight.h" />
+    <ClInclude Include="AreaLighting.h" />
+    <ClInclude Include="BoundingBox.h" />
+    <ClInclude Include="Box.h" />
+    <ClInclude Include="BRDF.h" />
+    <ClInclude Include="BTDF.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Checker3D.h" />
+    <ClInclude Include="Compound.h" />
+    <ClInclude Include="ConcavePartCylinder.h" />
+    <ClInclude Include="ConcavePartTorus.h" />
+    <ClInclude Include="ConstantColor.h" />
+    <ClInclude Include="ConvexPartCylinder.h" />
+    <ClInclude Include="CubicNoise.h" />
+    <ClInclude Include="Cylinder.h" />
+    <ClInclude Include="CylindricalMapping.h" />
+    <ClInclude Include="DebugMemory.h" />
+    <ClInclude Include="Dielectric.h" />
+    <ClInclude Include="DirectionalLight.h" />
+    <ClInclude Include="Disk.h" />
+    <ClInclude Include="Emissive.h" />
+    <ClInclude Include="FastDelegate.h" />
+    <ClInclude Include="FastDelegateBind.h" />
+    <ClInclude Include="FbmTexture.h" />
+    <ClInclude Include="FileLoader.h" />
+    <ClInclude Include="FishEyeCamera.h" />
+    <ClInclude Include="FlatMeshTriangle.h" />
+    <ClInclude Include="FlatUVMeshTriangle.h" />
+    <ClInclude Include="FresnelReflector.h" />
+    <ClInclude Include="FresnelTransmitter.h" />
+    <ClInclude Include="GeometricObject.h" />
+    <ClInclude Include="GlassOfWater.h" />
+    <ClInclude Include="GlossyReflector.h" />
+    <ClInclude Include="GlossySpecular.h" />
+    <ClInclude Include="Grid.h" />
+    <ClInclude Include="Hammersley.h" />
+    <ClInclude Include="HelperFunctions.h" />
+    <ClInclude Include="IDrawer.h" />
+    <ClInclude Include="ImageTexture.h" />
+    <ClInclude Include="Instance.h" />
+    <ClInclude Include="IParticleDrawer.h" />
+    <ClInclude Include="IUpdatable.h" />
+    <ClInclude Include="Jittered.h" />
+    <ClInclude Include="Lambert.h" />
+    <ClInclude Include="LatticeNoise.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="LightProbeMapping.h" />
+    <ClInclude Include="LinearNoise.h" />
+    <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="Mapping.h" />
+    <ClInclude Include="Material.h" />
+    <ClInclude Include="Matte.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="MeshTriangle.h" />
+    <ClInclude Include="MultiJittered.h" />
+    <ClInclude Include="MultipleObjects.h" />
+    <ClInclude Include="NRooks.h" />
+    <ClInclude Include="PathTrace.h" />
+    <ClInclude Include="PerfectSpecular.h" />
+    <ClInclude Include="PerfectTransmitter.h" />
+    <ClInclude Include="Phong.h" />
+    <ClInclude Include="PinHoleCamera.h" />
+    <ClInclude Include="Plane.h" />
+    <ClInclude Include="PlaneChecker.h" />
+    <ClInclude Include="PointLight.h" />
+    <ClInclude Include="PureRandom.h" />
+    <ClInclude Include="QTDebugMenu.h" />
+    <ClInclude Include="QtPaintWindow.h" />
+    <ClInclude Include="Ray.h" />
+    <ClInclude Include="RayCast.h" />
+    <ClInclude Include="Rect.h" />
+    <ClInclude Include="RectangleObject.h" />
+    <ClInclude Include="RectangularMapping.h" />
+    <ClInclude Include="Reflective.h" />
+    <ClInclude Include="Regular.h" />
+    <ClInclude Include="Sampler.h" />
+    <ClInclude Include="ShadeRec.h" />
+    <ClInclude Include="ShapeData.h" />
+    <ClInclude Include="SingleSphere.h" />
+    <ClInclude Include="SmoothMeshTriangle.h" />
+    <ClInclude Include="SmoothUVMeshTriangle.h" />
+    <ClInclude Include="Sphere.h" />
+    <ClInclude Include="SphereicalPanoramicCamera.h" />
+    <ClInclude Include="SphericalMapping.h" />
+    <ClInclude Include="SVLambertian.h" />
+    <ClInclude Include="SVMatte.h" />
+    <ClInclude Include="TexImage.h" />
+    <ClInclude Include="Texture.h" />
+    <ClInclude Include="ThinLensCamera.h" />
+    <ClInclude Include="Torus.h" />
+    <ClInclude Include="Tracer.h" />
+    <ClInclude Include="Transparent.h" />
+    <ClInclude Include="Triangle.h" />
+    <ClInclude Include="TypeDefs.h" />
+    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="ViewPlane.h" />
+    <ClInclude Include="Whitted.h" />
+    <ClInclude Include="WoodTexture.h" />
+    <ClInclude Include="World.h" />
+    <ClInclude Include="WrappedFbmTexture.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

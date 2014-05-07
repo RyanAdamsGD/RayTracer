@@ -1,0 +1,21 @@
+#ifndef TYPEDEFS_H
+#define TYPEDEFS_H
+
+#define Vector3 glm::vec3
+#define Point glm::vec3
+#define PI_OVER_4 0.78539816339744830961566084581988f
+#define PI_OVER_180 0.01745329251994329576923690768489f
+#define PI 3.1415926535897932384626433832795f
+#define INV_PI 0.31830988618379067153776752674503f
+#define INV_TWO_PI 0.15915494309189533576888376337251f
+#define TWO_PI 6.283185307179586476925286766559f
+#define _180_PI 57.295779513082320876798154814105f
+#define NUMBER_OF_THREADS 7
+#define MAX_NUMBER_OF_OBJECTS_IN_GRID 5000
+const float kEpsilon 	= 0.0001f; 
+const float kHugeValue	= 1.0E10;
+typedef unsigned int uint;
+typedef unsigned long ulong;
+typedef unsigned short ushort;
+
+#endif
